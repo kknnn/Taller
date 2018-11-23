@@ -426,6 +426,7 @@ public class AgregarMotor extends JFrame {
 		txtFecFactLCDM.setBounds(426, 312, 86, 20);
 		contentPane.add(txtFecFactLCDM);
 		txtFecFactLCDM.setColumns(10);
+		
 	}
 	
 	public Date stringADate(String fecha) throws ParseException{
