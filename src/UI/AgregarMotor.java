@@ -435,6 +435,7 @@ public class AgregarMotor extends JFrame {
 			java.util.Date dateEnJava = sdf1.parse(fecha);
 			java.sql.Date dateEnSql = new java.sql.Date(dateEnJava.getTime());
 			return dateEnSql;
+			
 		}
 		else{
 			return null;
