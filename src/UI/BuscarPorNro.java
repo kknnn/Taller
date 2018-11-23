@@ -18,6 +18,7 @@ import Entidades.Motor;
 import Negocio.MotorNegocio;
 
 import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -48,7 +49,7 @@ public class BuscarPorNro extends JFrame {
 	 */
 	public BuscarPorNro() {
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1376, 663);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -96,13 +97,56 @@ public class BuscarPorNro extends JFrame {
 		        }
 				MotorNegocio mn=new MotorNegocio();
 				Motor m=mn.buscarPorNumero(txtNro.getText());
+				
+				String fechaPedPresuString;
+				if(m.getFechaPedidoPresupuesto()==null){
+					fechaPedPresuString=null;
+				}else{
+					fechaPedPresuString=m.getFechaPedidoPresupuesto().toString();
+				}
+				
+				String fechaRemitoEntrada;
+				if(m.getFechaRemitoEntrada()==null){
+					fechaRemitoEntrada=null;
+				}else{
+					fechaRemitoEntrada=m.getFechaRemitoEntrada().toString();
+				}
+				
+				String fechaOrdenCompra;
+				if(m.getFechaOrdenCompra()==null){
+					fechaOrdenCompra=null;
+				}else{
+					fechaOrdenCompra=m.getFechaOrdenCompra().toString();
+				}
+				
+				String fechaPresupuesto;
+				if(m.getFechaPresupuesto()==null){
+					fechaPresupuesto=null;
+				}else{
+					fechaPresupuesto=m.getFechaPresupuesto().toString();
+				}
+				
+				String fechaRemitoLcdm;
+				if(m.getFechaRemitoLcdm()==null){
+					fechaRemitoLcdm=null;
+				}else{
+					fechaRemitoLcdm=m.getFechaRemitoLcdm().toString();
+				}
+				
+				String fechaFacturaLcdm;
+				if(m.getFechaFacturaLcdm()==null){
+					fechaFacturaLcdm=null;
+				}else{
+					fechaFacturaLcdm=m.getFechaFacturaLcdm().toString();
+				}
+				
 				String [] fila={m.getNroMotor(), m.getEmpresa(), m.getPotencia(), Integer.toString(m.getRmp()),
-						m.getObservaciones(), Integer.toString(m.getNroRemitoEntrada()), m.getFechaRemitoEntrada().toString(),
-						Integer.toString(m.getNroPedidoPresupuesto()), m.getFechaPedidoPresupuesto().toString(),
-						Integer.toString(m.getNroOrdenCompra()), m.getFechaOrdenCompra().toString(),
-						Integer.toString(m.getNroPresupuesto()), m.getFechaPresupuesto().toString(),
-						Integer.toString(m.getNroRemitoLcdm()), m.getFechaRemitoLcdm().toString(),
-						Integer.toString(m.getNroFacturaLcdm()), m.getFechaFacturaLcdm().toString()};
+						m.getObservaciones(), Integer.toString(m.getNroRemitoEntrada()), fechaRemitoEntrada,
+						Integer.toString(m.getNroPedidoPresupuesto()), fechaPedPresuString,
+						Integer.toString(m.getNroOrdenCompra()), fechaOrdenCompra,
+						Integer.toString(m.getNroPresupuesto()), fechaPresupuesto,
+						Integer.toString(m.getNroRemitoLcdm()), fechaRemitoLcdm,
+						Integer.toString(m.getNroFacturaLcdm()), fechaFacturaLcdm};
 				model.addRow(fila);
 			}
 		});

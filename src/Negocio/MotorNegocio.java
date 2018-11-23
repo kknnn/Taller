@@ -13,4 +13,20 @@ public class MotorNegocio {
 	public Motor buscarPorNumero(String nro){
 		return new MotorData().buscarPorNumero(nro);
 	}
+	
+	public ArrayList<Motor> buscarPorEmpresa(String empresa){
+		return new MotorData().buscarPorEmpresa(empresa);
+	}
+	
+	public void agregar(Motor m){
+		new MotorData().agregar(m);
+	}
+	
+	public boolean existeMotor(String nro){
+		return new MotorData().existeMotor(nro);
+	}
+	
+	public void editar(Motor m){
+		new MotorData().editar(m);
+	}
 }

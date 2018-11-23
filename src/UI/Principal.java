@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 
 public class Principal extends JFrame {
@@ -52,6 +54,12 @@ public class Principal extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnPorEmpresa = new JButton("Por Empresa");
+		btnPorEmpresa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				BuscarPorEmpresa bpe=new BuscarPorEmpresa();
+				bpe.setVisible(true);
+			}
+		});
 		btnPorEmpresa.setBounds(105, 44, 113, 23);
 		contentPane.add(btnPorEmpresa);
 		
@@ -67,11 +75,42 @@ public class Principal extends JFrame {
 		
 		JLabel lblNuevoMotor = new JLabel("NUEVO MOTOR");
 		lblNuevoMotor.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNuevoMotor.setBounds(157, 133, 130, 22);
+		lblNuevoMotor.setBounds(157, 121, 130, 22);
 		contentPane.add(lblNuevoMotor);
 		
 		JButton btnAgregar = new JButton("Agregar");
-		btnAgregar.setBounds(178, 166, 89, 23);
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AgregarMotor am=new AgregarMotor();
+				am.setVisible(true);
+			}
+		});
+		btnAgregar.setBounds(179, 154, 89, 23);
 		contentPane.add(btnAgregar);
+		
+		JButton btnVerTodos = new JButton("Ver Todos");
+		btnVerTodos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				VerTodosMotores vt=new VerTodosMotores();
+				vt.setVisible(true);
+			}
+		});
+		btnVerTodos.setBounds(178, 74, 109, 23);
+		contentPane.add(btnVerTodos);
+		
+		JLabel lblEditarMotor = new JLabel("EDITAR MOTOR");
+		lblEditarMotor.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEditarMotor.setBounds(157, 188, 130, 22);
+		contentPane.add(lblEditarMotor);
+		
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EditarMotor em=new EditarMotor();
+				em.setVisible(true);
+			}
+		});
+		btnEditar.setBounds(179, 221, 89, 23);
+		contentPane.add(btnEditar);
 	}
 }
