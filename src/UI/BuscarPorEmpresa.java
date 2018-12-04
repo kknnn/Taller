@@ -47,6 +47,7 @@ public class BuscarPorEmpresa extends JFrame {
 	 * Create the frame.
 	 */
 	public BuscarPorEmpresa() {
+		setTitle("BUSQUEDA");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1376, 663);
 		contentPane = new JPanel();
@@ -135,7 +136,7 @@ public class BuscarPorEmpresa extends JFrame {
 		contentPane.add(btnBuscar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 40, 1340, 544);
+		scrollPane.setBounds(10, 40, 1340, 573);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -154,9 +155,5 @@ public class BuscarPorEmpresa extends JFrame {
 		table.getColumnModel().getColumn(12).setPreferredWidth(74);
 		table.getColumnModel().getColumn(16).setPreferredWidth(79);
 		scrollPane.setViewportView(table);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(37, 595, 89, 23);
-		contentPane.add(btnNewButton);
 	}
 }

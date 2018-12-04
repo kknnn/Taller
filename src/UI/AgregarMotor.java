@@ -23,6 +23,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 import java.awt.event.ActionEvent;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class AgregarMotor extends JFrame {
 
@@ -65,6 +67,7 @@ public class AgregarMotor extends JFrame {
 	 * Create the frame.
 	 */
 	public AgregarMotor() {
+		setTitle("NUEVO MOTOR");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 560, 459);
 		contentPane = new JPanel();
@@ -426,6 +429,7 @@ public class AgregarMotor extends JFrame {
 		txtFecFactLCDM.setBounds(426, 312, 86, 20);
 		contentPane.add(txtFecFactLCDM);
 		txtFecFactLCDM.setColumns(10);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtNro, txtEmpresa, txtPotencia, txtRpm, txtObs, txtNroRemEntrada, txtFecRemEntrada, txtNroPedPresu, txtFecPedPresu, txtOc, txtFecOc, txtNroPresu, txtFecPresu, txtNroRemLCDM, txtFechaRemLCDM, txtNroFactLCDM, txtFecFactLCDM}));
 		
 	}
 	

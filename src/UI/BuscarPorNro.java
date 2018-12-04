@@ -48,9 +48,10 @@ public class BuscarPorNro extends JFrame {
 	 * Create the frame.
 	 */
 	public BuscarPorNro() {
+		setTitle("BUSQUEDA");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(0, 0, 1376, 663);
+		setBounds(0, 0, 1376, 194);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -67,7 +68,7 @@ public class BuscarPorNro extends JFrame {
 		txtNro.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 38, 1340, 534);
+		scrollPane.setBounds(10, 38, 1340, 118);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -82,10 +83,6 @@ public class BuscarPorNro extends JFrame {
 		table.getColumnModel().getColumn(4).setPreferredWidth(83);
 		table.getColumnModel().getColumn(5).setPreferredWidth(92);
 		scrollPane.setViewportView(table);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(20, 590, 89, 23);
-		contentPane.add(btnNewButton);
 		
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {

@@ -64,6 +64,7 @@ public class EditarMotor extends JFrame {
 	 * Create the frame.
 	 */
 	public EditarMotor() {
+		setTitle("EDITAR MOTOR");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 560, 459);
 		contentPane = new JPanel();

@@ -39,6 +39,7 @@ public class VerTodosMotores extends JFrame {
 	 * Create the frame.
 	 */
 	public VerTodosMotores() {
+		setTitle("LISTADO");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1376, 663);
 		contentPane = new JPanel();
